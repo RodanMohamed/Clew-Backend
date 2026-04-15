@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Clew.Common
 {
-    public class PaginationMetedata<T>
+    public class PaginationMetedata
     {
-        public IEnumerable<T> Data { get; set; } = new List<T>();
+       // public IEnumerable<T> Data { get; set; } = new List<T>();
         public int CurrentPage { get; set; }
         public int TotalCount { get; set; }
         public int PageNumber { get; set; }

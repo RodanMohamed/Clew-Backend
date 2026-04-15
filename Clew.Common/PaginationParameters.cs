@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace CompanySystem.Common
+namespace Clew.Common
 {
     public class PaginationParameters
     {
