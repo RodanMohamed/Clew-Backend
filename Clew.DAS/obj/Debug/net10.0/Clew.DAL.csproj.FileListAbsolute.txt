@@ -1,0 +1,14 @@
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\obj\Debug\net10.0\Clew.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\obj\Debug\net10.0\Clew.DAL.AssemblyInfoInputs.cache
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\obj\Debug\net10.0\Clew.DAL.AssemblyInfo.cs
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\obj\Debug\net10.0\Clew.DAL.csproj.CoreCompileInputs.cache
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\bin\Debug\net10.0\Clew.DAL.deps.json
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\bin\Debug\net10.0\Clew.DAL.runtimeconfig.json
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\bin\Debug\net10.0\Clew.DAL.dll
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\bin\Debug\net10.0\Clew.DAL.pdb
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\obj\Debug\net10.0\Clew.DAL.csproj.AssemblyReference.cache
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\obj\Debug\net10.0\Clew.DAL.dll
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\obj\Debug\net10.0\refint\Clew.DAL.dll
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\obj\Debug\net10.0\Clew.DAL.pdb
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\obj\Debug\net10.0\Clew.DAL.genruntimeconfig.cache
+C:\Users\ALRWOAD LABTOB\Documents\ITI_9Month\9_months_written_content\ASP.NetCore\API_Project\Clew.DAS\obj\Debug\net10.0\ref\Clew.DAL.dll

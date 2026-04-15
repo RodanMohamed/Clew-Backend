@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="API_Project/Clew.PL.csproj" />
+  <Project Path="Clew.BLL/Clew.BLL.csproj" />
+  <Project Path="Clew.DAS/Clew.DAL.csproj" />
+</Solution>
