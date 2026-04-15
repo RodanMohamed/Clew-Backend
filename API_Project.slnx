@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="API_Project/Clew.PL.csproj" />
   <Project Path="Clew.BLL/Clew.BLL.csproj" />
+  <Project Path="Clew.Common/Clew.Common.csproj" Id="89c6421e-676a-410a-837d-d03f8ab3ea86" />
   <Project Path="Clew.DAS/Clew.DAL.csproj" />
 </Solution>
