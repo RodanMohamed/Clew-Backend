@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Clew.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d84662521c4d17302b143e8a904716c077d78ea7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96009c4495b4cc96e091ef6b1a6f4ccf78feb8d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Clew.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Clew.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
