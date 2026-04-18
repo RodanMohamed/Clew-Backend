@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Clew.DAL
 {
-    public class Payment
+    public class Payment : IAuditableEntity
     {
         public string Id { get; set; } = string.Empty;
         public string UserId { get; set; } = string.Empty;
@@ -13,6 +13,8 @@ namespace Clew.DAL
         public string ExpiryDate { get; set; } = string.Empty;
         public string CardholderName { get; set; } = string.Empty;
         public bool IsDefault { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         public ApplicationUser User { get; set; } = null!;
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Clew.DAL
 {
-    public class Product
+    public class Product : IAuditableEntity
     {
         public string Id { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
@@ -15,6 +15,8 @@ namespace Clew.DAL
         public string ProductCode { get; set; } = string.Empty;
         public string Status { get; set; } = "In Stock";
         public int Stock { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         // FK
         public string CategoryId { get; set; } = string.Empty;

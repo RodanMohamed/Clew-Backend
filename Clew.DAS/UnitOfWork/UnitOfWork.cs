@@ -13,6 +13,7 @@ namespace Clew.DAL
         public IGenericRepository<Category> Categories { get; }
         public IGenericRepository<Favourite> Favourites { get; }
         public IGenericRepository<Payment> Payments { get; }
+        public ICartRepository Carts { get; }
 
         public UnitOfWork(AppDbContext context)
         {
@@ -22,6 +23,7 @@ namespace Clew.DAL
             Categories = new GenericRepository<Category>(context);
             Favourites = new GenericRepository<Favourite>(context);
             Payments = new GenericRepository<Payment>(context);
+            Carts = new CartRepository(context);
         }
 
         public async Task<int> SaveChangesAsync()

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Clew.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d18f7481ab6a4e09b311609ab69c5375a35a413")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96009c4495b4cc96e091ef6b1a6f4ccf78feb8d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Clew.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Clew.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

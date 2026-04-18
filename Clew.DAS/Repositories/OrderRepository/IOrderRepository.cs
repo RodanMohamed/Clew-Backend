@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Clew.DAL
 {
-    public interface IOrderRepository
+    public interface IOrderRepository : IGenericRepository<Order>
     {
         Task<IEnumerable<Order>> GetByUserAsync(string userId);
         Task<Order?> GetWithItemsAsync(string orderId);

@@ -11,6 +11,7 @@ namespace Clew.DAL
         IGenericRepository<Category> Categories { get; }
         IGenericRepository<Favourite> Favourites { get; }
         IGenericRepository<Payment> Payments { get; }
+        ICartRepository Carts { get; }
 
         Task<int> SaveChangesAsync();
 

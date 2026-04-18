@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Clew.DAL
 {
-    public class Order
+    public class Order : IAuditableEntity
     {
         public string Id { get; set; } = string.Empty;
         public string UserId { get; set; } = string.Empty;
@@ -14,7 +14,8 @@ namespace Clew.DAL
         public decimal Total { get; set; }
         public string PaymentMethod { get; set; } = string.Empty;
         public string Status { get; set; } = "pending";
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
         public DateTime? EstimatedDeliveryDate { get; set; }
         public DateTime? DeliveredDate { get; set; }
 

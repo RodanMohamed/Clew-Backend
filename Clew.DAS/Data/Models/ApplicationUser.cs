@@ -13,7 +13,7 @@ namespace Clew.DAL
         public string? AvatarUrl { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        // Navigation
+        
         public Address? Address { get; set; }
         public ICollection<Order> Orders { get; set; } = new List<Order>();
         public ICollection<Favourite> Favourites { get; set; } = new List<Favourite>();
