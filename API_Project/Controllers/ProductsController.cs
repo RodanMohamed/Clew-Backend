@@ -11,10 +11,12 @@ namespace Clew.API
     public class ProductsController : ControllerBase
     {
         private readonly IProductManager _productManager;
+        private readonly IImageManager _imageManager;
 
-        public ProductsController(IProductManager productManager)
+        public ProductsController(IProductManager productManager, IImageManager imageManager)
         {
             _productManager = productManager;
+            _imageManager = imageManager;
         }
 
         [HttpGet]
@@ -66,6 +68,34 @@ namespace Clew.API
         {
             var result = await _productManager.CreateProductAsync(dto);
             return ToActionResult(result);
+        }
+
+        [Authorize(Policy = "AdminOnly")]
+        [HttpPost("{id}/image")]
+        public async Task<IActionResult> UploadProductImage(string id, [FromForm] ImageUploadDto dto)
+        {
+            var uploadResult = await _imageManager.UploadAsync(
+                dto,
+                Directory.GetCurrentDirectory(),
+                Request.Scheme,
+                Request.Host.Value);
+
+            if (!uploadResult.Success || uploadResult.Data == null)
+            {
+                return ToActionResult(uploadResult);
+            }
+
+            var editDtoResult = await _productManager.GetProductEditByIdAsync(id);
+            if (!editDtoResult.Success || editDtoResult.Data == null)
+            {
+                return ToActionResult(editDtoResult);
+            }
+
+            var editDto = editDtoResult.Data;
+            editDto.Image = uploadResult.Data.Url;
+
+            var updateResult = await _productManager.EditAsync(editDto);
+            return ToActionResult(updateResult);
         }
 
         [Authorize(Policy = "AdminOnly")]

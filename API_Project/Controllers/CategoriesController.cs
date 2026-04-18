@@ -10,10 +10,12 @@ namespace Clew.API
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoryManager _categoryManager;
+        private readonly IImageManager _imageManager;
 
-        public CategoriesController(ICategoryManager categoryManager)
+        public CategoriesController(ICategoryManager categoryManager, IImageManager imageManager)
         {
             _categoryManager = categoryManager;
+            _imageManager = imageManager;
         }
 
         [HttpGet]
@@ -43,6 +45,38 @@ namespace Clew.API
         {
             var result = await _categoryManager.CreateCategoryAsync(dto);
             return ToActionResult(result);
+        }
+
+        [Authorize(Policy = "AdminOnly")]
+        [HttpPost("{id}/image")]
+        public async Task<IActionResult> UploadCategoryImage(string id, [FromForm] ImageUploadDto dto)
+        {
+            var uploadResult = await _imageManager.UploadAsync(
+                dto,
+                Directory.GetCurrentDirectory(),
+                Request.Scheme,
+                Request.Host.Value);
+
+            if (!uploadResult.Success || uploadResult.Data == null)
+            {
+                return ToActionResult(uploadResult);
+            }
+
+            var categoryResult = await _categoryManager.GetCategoryByIdAsync(id);
+            if (!categoryResult.Success || categoryResult.Data == null)
+            {
+                return ToActionResult(categoryResult);
+            }
+
+            var editDto = new CategoryEditDto
+            {
+                Id = categoryResult.Data.Id,
+                Name = categoryResult.Data.Name,
+                Image = uploadResult.Data.Url
+            };
+
+            var updateResult = await _categoryManager.EditCategoryAsync(editDto);
+            return ToActionResult(updateResult);
         }
 
         [Authorize(Policy = "AdminOnly")]
