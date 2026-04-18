@@ -9,5 +9,6 @@ namespace Clew.BLL
         public string Id { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public string? Image { get; set; }
+        public int ProductCount { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace Clew.BLL
     {
         private readonly IValidator<ImageUploadDto> _validator;
         private readonly IErrorMapper _errorMapper;
-        /*------------------------------------------------------------------*/
+       
         public ImageManager(IValidator<ImageUploadDto> validator, IErrorMapper errorMapper)
         {
             _validator = validator;
@@ -29,12 +29,7 @@ namespace Clew.BLL
                 var errors = _errorMapper.MapError(result);
                 return GeneralResult<ImageUploadResultDto>.FailResult(errors);
             }
-            //var _file = imageUploadDto.File;
-            //if (_file == null || _file.Length == 0)
-            //{
-            //    return GeneralResult<ImageUploadResultDto>.FailResult("File is required");
-            //}
-
+           
             var file = imageUploadDto.File;
             var extention = Path.GetExtension(file.FileName).ToLower();
             var cleanName = Path.GetFileNameWithoutExtension(file.FileName).Replace(" ", "-").ToLower();

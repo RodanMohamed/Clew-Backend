@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using FluentValidation.Results;
 
-namespace CompanySystem.BLL
+namespace Clew.BLL
 {
     public class ErrorMapper : IErrorMapper
     {

@@ -6,6 +6,7 @@ namespace Clew.BLL
 {
     public class ProductEditDto
     {
+        public string Id { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public string? Image { get; set; }
         public decimal Price { get; set; }

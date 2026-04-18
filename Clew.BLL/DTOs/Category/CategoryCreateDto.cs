@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Clew.BLL
 {
-    public class EditCategoryDto
+    public class CategoryCreateDto
     {
         public string Name { get; set; } = string.Empty;
         public string? Image { get; set; }

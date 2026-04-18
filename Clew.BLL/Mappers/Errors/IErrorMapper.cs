@@ -5,7 +5,7 @@ using System.Text;
 using Clew.Common;
 using FluentValidation.Results;
 
-namespace CompanySystem.BLL
+namespace Clew.BLL
 {
     public interface IErrorMapper
     {
