@@ -8,10 +8,9 @@ namespace Clew.Common
     {
         public string? CategoryId { get; set; }
         public string? Name { get; set; }
+        public string? Description { get; set; }
         public string? Material { get; set; }
         public decimal? MinPrice { get; set; }
         public decimal? MaxPrice { get; set; }
-        public int PageNumber { get; set; } = 1;
-        public int PageSize { get; set; } = 10;
     }
 }
