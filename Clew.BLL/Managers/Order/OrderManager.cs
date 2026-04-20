@@ -105,6 +105,23 @@ namespace Clew.BLL
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(createOrderReadDto.PaymentMethod))
+                {
+                    return GeneralResult<OrderReadDto>.FailResult("Payment method is required.");
+                }
+
+                if (createOrderReadDto.ShippingAddress is null)
+                {
+                    return GeneralResult<OrderReadDto>.FailResult("Shipping address is required.");
+                }
+
+                if (string.IsNullOrWhiteSpace(createOrderReadDto.ShippingAddress.StreetAddress) ||
+                    string.IsNullOrWhiteSpace(createOrderReadDto.ShippingAddress.City) ||
+                    string.IsNullOrWhiteSpace(createOrderReadDto.ShippingAddress.ZipCode))
+                {
+                    return GeneralResult<OrderReadDto>.FailResult("Street address, city, and zip code are required.");
+                }
+
                 // Get user's cart
                 var cartResult = await _cartManager.GetCartByUserIdAsync(userId);
                 if (!cartResult.Success || cartResult.Data == null || !cartResult.Data.Items.Any())

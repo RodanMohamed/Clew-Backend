@@ -11,19 +11,23 @@ namespace Clew.BLL
     {
         public OrderProfile()
         {
-            // Entity to DTO
-            //CreateMap<Order, OrderReadDto>()
-            //    .ForMember(dest => dest.ShippingAddress, opt => opt.MapFrom(src => 
-            //        JsonSerializer.Deserialize<ShippingAddressDto>(src.ShippingAddress ?? "{}")));
-            
-            CreateMap<OrderItem, OrderItemReadDto>()
-                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product != null ? src.Product.Name : "Unknown"))
-                .ForMember(dest => dest.ProductImage, opt => opt.MapFrom(src => src.Product != null ? src.Product.Image : null));
+            CreateMap<Order, OrderReadDto>();
 
-            // DTO to Entity
+            CreateMap<OrderItem, OrderItemReadDto>()
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src =>
+                    !string.IsNullOrWhiteSpace(src.ProductName)
+                        ? src.ProductName
+                        : (src.Product != null ? src.Product.Name : string.Empty)))
+                .ForMember(dest => dest.ProductImage, opt => opt.MapFrom(src =>
+                    !string.IsNullOrWhiteSpace(src.ProductImage)
+                        ? src.ProductImage
+                        : (src.Product != null ? src.Product.Image : null)));
+
+            CreateMap<ShippingAddressDto, Address>().ReverseMap();
+
+           
             CreateMap<PlaceOrderDto, Order>()
-                .ForMember(dest => dest.ShippingAddress, opt => opt.MapFrom(src => 
-                    JsonSerializer.Serialize(src.ShippingAddress)));
+                .ForMember(dest => dest.ShippingAddress, opt => opt.MapFrom(src => src.ShippingAddress));
         }
     }
 }

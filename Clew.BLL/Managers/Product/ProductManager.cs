@@ -344,7 +344,6 @@ namespace Clew.BLL
             if (filters == null)
                 return query;
 
-           
             if (!string.IsNullOrWhiteSpace(filters.CategoryId))
             {
                 query = query.Where(p => p.CategoryId == filters.CategoryId);
@@ -352,22 +351,26 @@ namespace Clew.BLL
 
             if (!string.IsNullOrWhiteSpace(filters.Name))
             {
-                query = query.Where(p => p.Name.Contains(filters.Name));
+                var nameTerm = filters.Name.Trim();
+                query = query.Where(p => !string.IsNullOrWhiteSpace(p.Name) && p.Name.Contains(nameTerm, StringComparison.OrdinalIgnoreCase));
             }
 
-           
+            if (!string.IsNullOrWhiteSpace(filters.Description))
+            {
+                var descriptionTerm = filters.Description.Trim();
+                query = query.Where(p => !string.IsNullOrWhiteSpace(p.Description) && p.Description.Contains(descriptionTerm, StringComparison.OrdinalIgnoreCase));
+            }
+
             if (!string.IsNullOrWhiteSpace(filters.Material))
             {
-                query = query.Where(p => p.Material.ToLower() == filters.Material.ToLower());
+                query = query.Where(p => !string.IsNullOrWhiteSpace(p.Material) && p.Material.Contains(filters.Material.Trim(), StringComparison.OrdinalIgnoreCase));
             }
 
-            // Filter by MinPrice
             if (filters.MinPrice.HasValue)
             {
                 query = query.Where(p => p.Price >= filters.MinPrice.Value);
             }
 
-            // Filter by MaxPrice
             if (filters.MaxPrice.HasValue)
             {
                 query = query.Where(p => p.Price <= filters.MaxPrice.Value);

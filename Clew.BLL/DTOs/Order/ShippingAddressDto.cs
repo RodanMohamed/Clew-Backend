@@ -6,9 +6,9 @@ namespace Clew.BLL
 {
     public class ShippingAddressDto
     {
-        public string? StreetAddress { get; set; }
-        public string? City { get; set; }
-        public string? ZipCode { get; set; }
+        public string StreetAddress { get; set; } = string.Empty;
+        public string City { get; set; } = string.Empty;
+        public string ZipCode { get; set; } = string.Empty;
         public string? FullAddress { get; set; }
     }
 }
