@@ -18,6 +18,7 @@ namespace Clew.API
         }
 
         [HttpPost("upload")]
+        [Consumes("multipart/form-data")]
         public async Task<IActionResult> Upload([FromForm] ImageUploadDto dto)
         {
             var result = await _imageManager.UploadAsync(
