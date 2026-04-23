@@ -118,6 +118,7 @@ Bearer <your_token>
 - Console
 - `logs/log.txt` (rolling daily)
 
+## Testing APIs
 - see :
 - 1-Postman testing Endpoints video :https://drive.google.com/file/d/1vh9dWaGQjNfQYs2NpWoy1Y1-M3AYX8od/view?usp=drivesdk
 - 2-Scalar testing Endpoints Video:https://drive.google.com/file/d/1shML2A2ZSnisX3f4Jh9a2XDPbJzODpJJ/view?usp=drivesdk
